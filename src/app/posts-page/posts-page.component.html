@@ -1,0 +1,17 @@
+
+<div class="posts-list" *ngIf="postsExists | async">
+    <mat-accordion>
+        <mat-expansion-panel *ngFor="let post of posts | async as Post">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{post.title}}
+            </mat-panel-title>
+        
+        </mat-expansion-panel-header>
+        {{post.body}}
+       
+        <div class="post-page-button"><button  class="button-19" role="button">Go to post page</button></div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+

@@ -1,0 +1,52 @@
+.posts-list {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 3em;
+
+    .button-19 {
+        background-color: #1899D6;
+        color: #FFFFFF;
+
+        border: solid transparent;
+        border-radius: 16px;
+        border-width: 0 0 0.4em;
+        
+        cursor: pointer;
+
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        line-height: 0.9em;
+       
+        padding: 1.2em;
+        margin-top: 1em;
+       
+        transform: translateZ(0);
+        transition: filter .2s;
+      }
+      
+      .button-19:after {
+        background-clip: padding-box;
+        background-color: #1CB0F6;
+        
+        border: solid transparent;
+        border-radius: 16px;
+        border-width: 0 0 0.4em;
+
+        content: "";
+        
+        position: absolute;
+        bottom: -0.3em;        
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: -1;
+      }
+      
+      .button-19:hover {
+        filter: brightness(1.1);
+      }
+}
+
