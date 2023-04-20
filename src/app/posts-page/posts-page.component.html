@@ -11,7 +11,7 @@
 
 <div class="posts-list" *ngIf="postsExists | async">
     <mat-accordion>
-        <mat-expansion-panel *ngFor="let post of posts | async | filterByTitle:filter ">
+        <mat-expansion-panel *ngFor="let post of posts | async | filterByTitle:filter " [expanded] = "isCardIdExpanded(post.id)" >
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     {{post.title}}
