@@ -8,13 +8,16 @@ import { AppComponent } from './app.component';
 import { PostsPageComponent } from './posts-page/posts-page.component';
 import { RoutingModule } from './routing.modules';
 import { PostIdPageComponent } from './post-id-page/post-id-page.component';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
-  declarations: [AppComponent, PostsPageComponent, PostIdPageComponent],
+  declarations: [AppComponent, PostsPageComponent, PostIdPageComponent, FilterPipe],
   imports: [
     BrowserModule,
     HttpClientModule,
     RoutingModule,
+    FormsModule,
     MatExpansionModule,
     BrowserAnimationsModule,
   ],

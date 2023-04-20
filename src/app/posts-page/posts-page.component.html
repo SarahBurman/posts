@@ -1,16 +1,26 @@
+<!-- <div *ngIf="postsExists | async" class="filter-input">
+    <input type="search" class="form-control"  [(ngModel)]="filter" placeholder="Filter by name">
+</div> -->
+
+<div class="input-field">
+    <label class="input">
+        <input class="input__field" type="text" [(ngModel)]="filter" placeholder=" " />
+        <span class="input__label">Filter by name</span>
+    </label>
+</div>
 
 <div class="posts-list" *ngIf="postsExists | async">
     <mat-accordion>
-        <mat-expansion-panel *ngFor="let post of posts | async as Post">
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                {{post.title}}
-            </mat-panel-title>
+        <mat-expansion-panel *ngFor="let post of posts | async | filterByTitle:filter ">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{post.title}}
+                </mat-panel-title>
+            
+            </mat-expansion-panel-header>
+            {{post.body}}
         
-        </mat-expansion-panel-header>
-        {{post.body}}
-       
-        <div class="post-page-button"><button  class="button-19" role="button">Go to post page</button></div>
+            <div class="post-page-button"><button  class="button-go-to" role="button" (click)="goToPost(post.id)">Go to post page</button></div>
         </mat-expansion-panel>
     </mat-accordion>
 </div>

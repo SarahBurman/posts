@@ -1,10 +1,9 @@
 .posts-list {
-    display: flex;
-    justify-content: center;
+  display: block;
+  margin: 1em 3em 0em 3em;
 
-    margin-top: 3em;
 
-    .button-19 {
+    .button-go-to {
         background-color: #1899D6;
         color: #FFFFFF;
 
@@ -27,7 +26,7 @@
         transition: filter .2s;
       }
       
-      .button-19:after {
+      .button-go-to:after {
         background-clip: padding-box;
         background-color: #1CB0F6;
         
@@ -45,8 +44,50 @@
         z-index: -1;
       }
       
-      .button-19:hover {
+      .button-go-to:hover {
         filter: brightness(1.1);
       }
 }
 
+.input-field {
+  display: flex;
+  flex-flow: row-reverse;
+}
+
+.input {
+  position: relative;
+  
+  &__label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: calc(.5rem * 0.75) calc(.5rem * .5);
+    margin: calc(.5rem * 0.75 + 3px) calc(.5rem * .5);
+    background: pink;
+    white-space: nowrap;
+    transform: translate(0, 0);
+    transform-origin: 0 0;
+    background: white;
+    transition: transform 120ms ease-in;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  &__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: 3px solid currentColor;
+    padding: calc(.5rem * 1.5) .5rem;
+    color: currentColor;
+    background: transparent;
+    border-radius:.5rem;
+    
+    &:focus,
+    &:not(:placeholder-shown) {
+      & + .input__label {
+        transform: translate(.25rem, -65%) scale(.8);
+        color:  #1899D6;
+      }
+    }
+  }
+}
